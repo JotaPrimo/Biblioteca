@@ -34,4 +34,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// rotas de categoria_livro
+app.MapControllerRoute(
+    name: "categoriaLivro",
+    pattern: "Categoria-Livro/{action}/{id?}",
+    defaults: new { Controller = "CategoriaLivro", action = "List" });
+
 app.Run();

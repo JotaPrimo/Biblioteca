@@ -16,9 +16,8 @@ namespace Biblioteca.Models
         [Display(Name = "Nome")]
         public string Nome { get; set; }
 
-        [StringLength(200, ErrorMessage = "No máximo 200 caracteres")]
-        [Column(TypeName = "TEXT")]
-        [Required(ErrorMessage = "Campo obrigatório")]
+        
+        [Column(TypeName = "TEXT")]       
         public string Descricao { get; set; }
 
         [Column(TypeName = "INT")]
