@@ -1035,7 +1035,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jailson Primo\\.nuget\\packages\\": {},
+    "C:\\Users\\MICRO\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
@@ -1045,7 +1045,7 @@
       "projectUniqueName": "C:\\Cursos\\C#\\Biblioteca\\Biblioteca\\Biblioteca.csproj",
       "projectName": "Biblioteca",
       "projectPath": "C:\\Cursos\\C#\\Biblioteca\\Biblioteca\\Biblioteca.csproj",
-      "packagesPath": "C:\\Users\\Jailson Primo\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\MICRO\\.nuget\\packages\\",
       "outputPath": "C:\\Cursos\\C#\\Biblioteca\\Biblioteca\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -1053,7 +1053,7 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jailson Primo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MICRO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
