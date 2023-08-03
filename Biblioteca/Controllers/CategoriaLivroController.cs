@@ -14,10 +14,12 @@ namespace Biblioteca.Controllers
 
         public IActionResult Index()
         {
+
             var categorias = _categoriaLivroRepository.GetAll;
 
             return View(categorias);
         }
 
     }
+
 }

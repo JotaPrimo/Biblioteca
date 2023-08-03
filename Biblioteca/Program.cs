@@ -1,6 +1,8 @@
 using Biblioteca.Context;
+using Biblioteca.Repositories;
+using Biblioteca.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ICategoriaLivroRepository, CategoriaLivroRepositoryImpl>();
 
 
 var app = builder.Build();
@@ -34,10 +37,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// rotas de categoria_livro
 app.MapControllerRoute(
-    name: "categoriaLivro",
-    pattern: "Categoria-Livro/{action}/{id?}",
-    defaults: new { Controller = "CategoriaLivro", action = "List" });
+    name: "default",
+    pattern: "{controller=CategoriaLivro}/{action=Index}/{id?}");
 
 app.Run();

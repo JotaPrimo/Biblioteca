@@ -36,7 +36,6 @@ namespace Biblioteca.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
