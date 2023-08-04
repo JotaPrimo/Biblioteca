@@ -24,5 +24,7 @@ namespace Biblioteca.Models
         public int Deletado { get; set; } = NAO_DELETADO;
         public DateTime Created_at { get; set; }
         public DateTime? Deleted_at { get; set; }
+
+        public bool isDeletado() => this.Deletado == DELETADO;
     }
 }

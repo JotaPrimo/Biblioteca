@@ -19,7 +19,7 @@ namespace Biblioteca.Repositories
 
         private int _nextId = 1;
 
-        public IEnumerable<CategoriaLivro> GetAll => _dbContext.CategoriaLivros;
+        public IEnumerable<CategoriaLivro> GetAll => _dbContext.CategoriaLivros.ToList();
 
         public CategoriaLivro FindById(int id)
         {

@@ -1,4 +1,5 @@
-﻿using Biblioteca.Repositories.Interfaces;
+﻿using Biblioteca.Models;
+using Biblioteca.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Biblioteca.Controllers
@@ -14,7 +15,7 @@ namespace Biblioteca.Controllers
 
         public IActionResult Index()
         {
-            var categorias = _categoriaLivroRepository.GetAll;
+            List<CategoriaLivro> categorias = _categoriaLivroRepository.GetAll.ToList();
 
             return View(categorias);
         }

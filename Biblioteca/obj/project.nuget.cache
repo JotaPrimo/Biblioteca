@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GGP7HbdPgiYw+af70PVmLRrE/GPLErOQ4PElOfxe6qlF/KE+VbE+Y6ZuYsfLDKuHIIZm6zJBMOtxsYvxFa/Xuw==",
+  "dgSpecHash": "3gX0VMeV5D5EiMFFO6ZyATfKoM9OKZwZ85RMkD4gK5G78yhsmtzFq1XIIi14lcdjUgxEtdbvUliJYqcP/DW8eg==",
   "success": true,
   "projectFilePath": "C:\\Cursos\\C#\\Biblioteca\\Biblioteca\\Biblioteca.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Jailson Primo\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.9\\microsoft.entityframeworkcore.analyzers.7.0.9.nupkg.sha512",
     "C:\\Users\\Jailson Primo\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.9\\microsoft.entityframeworkcore.design.7.0.9.nupkg.sha512",
     "C:\\Users\\Jailson Primo\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.9\\microsoft.entityframeworkcore.relational.7.0.9.nupkg.sha512",
+    "C:\\Users\\Jailson Primo\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.9\\microsoft.entityframeworkcore.tools.7.0.9.nupkg.sha512",
     "C:\\Users\\Jailson Primo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Jailson Primo\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\Jailson Primo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

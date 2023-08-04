@@ -9,6 +9,8 @@ namespace Biblioteca.Migrations
     /// <inheritdoc />
     public partial class CategoriaLivro : Migration
     {
+        public string Nome { get; internal set; }
+
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
