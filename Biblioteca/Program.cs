@@ -47,6 +47,8 @@ internal class Program
             pattern: "Categoria-Livro/{action}/{id?}",
             defaults: new { Controller = "CategoriaLivro", action = "List" });
 
+
+
         app.Run();
     }
 }

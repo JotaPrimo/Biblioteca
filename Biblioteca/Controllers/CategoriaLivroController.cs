@@ -20,5 +20,8 @@ namespace Biblioteca.Controllers
             return View(categorias);
         }
 
+        public IActionResult Create() =>  View();
+
+
     }
 }

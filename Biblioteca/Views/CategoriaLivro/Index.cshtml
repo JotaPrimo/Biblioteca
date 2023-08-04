@@ -4,7 +4,8 @@
     <div class="col-12 col-sm-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title mb-0">Product Sales</h3>
+                <h3 class="card-title mb-0">Categorias de livros</h3>
+                <a asp-action="Create">Novo</a>
             </div>
             <div class="card-body pt-4">
                 <div class="grid-margin">
@@ -76,17 +77,20 @@
                                                                         <td>
                                                                             <div class="d-flex">
                                                                                 <div class="mt-0 mt-sm-3 d-block">
-                                                                                    <h6 class="mb-0 fs-14 fw-semibold">@formacao.Created_at</h6>
+                                                                                    <h6 class="mb-0 fs-14 fw-semibold">@formacao.returnCreatedAtFormatado()</h6>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
-                                                                        <td><span class="mt-sm-2 d-block">@formacao.Deleted_at</span></td>                                                                      
+                                                                        <td>
+                                                                            <span class="mt-sm-2 d-block">
+                                                                                @formacao.returnDeletedAtFormatado()</span>
+                                                                            </td>                                                                      
                                                                        
                                                                         <td>
                                                                             <div class="mt-sm-1 d-block">
                                                                                 <span class="badge @(formacao.isDeletado() ? "bg-danger-transparent" : "bg-success-transparent") rounded-pill text-success p-2 px-3">
-                                                                                    @formacao.isDeletado() ? "Sim" : "Não"
-                                                                                    </span>
+                                                                                    @(formacao.isDeletado() ? "Inativo" : "Ativo")
+                                                                                </span>
                                                                             </div>
                                                                         </td>
                                                                         <td>

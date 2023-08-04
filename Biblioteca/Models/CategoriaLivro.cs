@@ -26,5 +26,19 @@ namespace Biblioteca.Models
         public DateTime? Deleted_at { get; set; }
 
         public bool isDeletado() => this.Deletado == DELETADO;
+
+        public String returnCreatedAtFormatado() =>  Created_at.ToString("dd/MM/yyyy");
+
+        public String returnDeletedAtFormatado()
+        {
+            if (isDeletado())
+            {
+                return Created_at.ToString("dd/MM/yyyy");
+            }
+
+            return "";
+        }
+       
+       
     }
 }
