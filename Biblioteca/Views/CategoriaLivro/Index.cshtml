@@ -105,14 +105,42 @@
                                                                                 </a>
 
 
-                                                                                <a href="#" data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                                                <a data-bs-effect="effect-scale" data-bs-toggle="modal" href="#modalDelete-@formacao.Id" data-bs-original-title="Delete">
                                                                                     <button type="button" class="btn btn-sm btn-danger">
                                                                                         <span class="fe fe-trash-2 fs-14"></span>
-                                                                                    Link</button>
+                                                                                    Deletar
+                                                                                </button>
                                                                                 </a>
                                                                             </div>
                                                                         </td>
                                                                     </tr>
+
+
+                                                                    <form asp-action="Delete" asp-route-id="@formacao.Id" method="post">
+                                                                        <div class="modal fade" id="modalDelete-@formacao.Id" style="display: none;" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-dialog-centered text-center" role="document">
+                                                                                <div class="modal-content modal-content-demo">
+                                                                                    <div class="modal-header">
+                                                                                        <h6 class="modal-title">Atenção</h6>
+                                                                                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal">
+                                                                                            <span aria-hidden="true">×</span></button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">                                                                                       
+                                                                                        <h6>Deletar @formacao.Nome ?</h6>
+                                                                                        <p>
+                                                                                           Esta ação não poderá ser desfeita 
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button class="btn btn-danger">Deletar</button> 
+                                                                                        <button class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+
+
                                                                 }
                                                             </tbody>
                                                         </table>
