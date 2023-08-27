@@ -1,5 +1,9 @@
 ﻿@model List<Biblioteca.Models.CategoriaLivro>
 
+@{
+    var searchTerm = TempData["searchTerm"] as string;
+}
+
 <div class="row">
     <div class="col-12 col-sm-12">
         <div class="card">
@@ -20,31 +24,26 @@
                                             <div id="data-table_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                                                 <div class="row">                                                   
                                                     <div class="col-sm-12 col-md-12">
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-4 mb-0">
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" id="name1" placeholder="Buscar por id">
+                                                        <form asp-action="Index" method="GET">
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4 mb-0">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control" name="searchTerm" value="@(searchTerm ?? "")" placeholder="Buscar por id, nome">
+                                                                        @if (!string.IsNullOrEmpty(searchTerm))
+                                                                        {
+                                                                            <span class="badge bg-warning badge-sm  me-1 mb-1 mt-1">Filtro aplicado</span>
+                                                                        }
+                                                                       
+                                                                    </div>
+                                                                </div>                                                              
+                                                                
+                                                                <div class="form-group col-md-1 mb-0">
+                                                                    <div class="form-group">
+                                                                        <input type="submit" class="btn btn-sm btn-primary" id="name2" value="Buscar">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group col-md-4 mb-0">
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" id="name2" placeholder="Buscar por nome">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group col-md-3 mb-0">                                                               
-                                                                <select name="country" class="form-control form-select select2" data-bs-placeholder="Select Country">
-                                                                    <option value="br">Brazil</option>
-                                                                    <option value="cz">Czech Republic</option>
-                                                                    <option value="de">Germany</option>
-                                                                    <option value="pl" selected>Poland</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group col-md-1 mb-0">
-                                                                <div class="form-group">
-                                                                    <input type="submit" class="btn btn-sm btn-primary" id="name2" value="Buscar">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        </form>                                                        
                                                     </div>
                                                 </div>
                                                 <div class="row">

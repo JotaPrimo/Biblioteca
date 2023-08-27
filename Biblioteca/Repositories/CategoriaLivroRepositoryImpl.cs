@@ -17,7 +17,7 @@ namespace Biblioteca.Repositories
         }
 
 
-        
+        public IQueryable<CategoriaLivro> ReturnQuerable => _dbContext.CategoriaLivros.AsQueryable();
 
         public IEnumerable<CategoriaLivro> GetAll => _dbContext.CategoriaLivros.ToList();
 

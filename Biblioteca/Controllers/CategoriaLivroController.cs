@@ -1,12 +1,15 @@
-﻿using Biblioteca.Models;
+﻿using Biblioteca.Context;
+using Biblioteca.Models;
 using Biblioteca.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Biblioteca.Controllers
 {
     public class CategoriaLivroController : Controller
     {
         private readonly ICategoriaLivroRepository _categoriaLivroRepository;
+        
 
         public CategoriaLivroController(ICategoriaLivroRepository categoriaLivroRepository)
         {
@@ -14,9 +17,21 @@ namespace Biblioteca.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string searchTerm)
         {
-            List<CategoriaLivro> categorias = _categoriaLivroRepository.GetAll.ToList();
+            List<CategoriaLivro> categorias;
+            IQueryable<CategoriaLivro> categoriasQueryable = _categoriaLivroRepository.ReturnQuerable;
+
+            if (! string.IsNullOrEmpty(searchTerm))
+            {
+                TempData["searchTerm"] = searchTerm;
+                var dataFound = categoriasQueryable.Where(c => c.Nome.Contains(searchTerm));
+                categorias = dataFound.ToList();
+            }
+            else
+            {               
+                categorias = _categoriaLivroRepository.GetAll.ToList();
+            }          
 
             return View(categorias);
         }
