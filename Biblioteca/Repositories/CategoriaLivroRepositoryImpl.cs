@@ -17,7 +17,7 @@ namespace Biblioteca.Repositories
         }
 
 
-        private int _nextId = 1;
+        
 
         public IEnumerable<CategoriaLivro> GetAll => _dbContext.CategoriaLivros.ToList();
 
@@ -29,15 +29,14 @@ namespace Biblioteca.Repositories
         public CategoriaLivro Create(CategoriaLivro categoriaLivro)
         {
             _dbContext.Add(categoriaLivro);
+            _dbContext.SaveChanges();
             return categoriaLivro;
         }     
          
 
         public void Update(int id, CategoriaLivroDTO categoriaLivroDTO)
         {
-            var existingCategoria = _dbContext.CategoriaLivros.FirstOrDefault(c => c.Id == id);
-
-          
+            var existingCategoria = _dbContext.CategoriaLivros.FirstOrDefault(c => c.Id == id);          
         }
 
         public void Delete(int id)

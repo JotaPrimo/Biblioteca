@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Database\Seeders\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

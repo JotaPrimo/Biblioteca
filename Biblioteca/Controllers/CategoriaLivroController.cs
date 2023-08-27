@@ -13,6 +13,7 @@ namespace Biblioteca.Controllers
             _categoriaLivroRepository = categoriaLivroRepository;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             List<CategoriaLivro> categorias = _categoriaLivroRepository.GetAll.ToList();
@@ -20,7 +21,21 @@ namespace Biblioteca.Controllers
             return View(categorias);
         }
 
+        [HttpGet]
         public IActionResult Create() =>  View();
+
+        [HttpPost]
+        public IActionResult Store(CategoriaLivro categoriaLivro)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            _categoriaLivroRepository.Create(categoriaLivro);
+            TempData["success"] = "Categoria cadastrada com sucesso";
+
+            return RedirectToAction("Index");
+        }
 
 
     }
