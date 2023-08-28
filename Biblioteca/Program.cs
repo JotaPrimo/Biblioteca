@@ -1,6 +1,9 @@
 using Biblioteca.Context;
 using Biblioteca.Repositories;
 using Biblioteca.Repositories.Interfaces;
+using Biblioteca.Services;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -16,6 +19,8 @@ internal class Program
                   new MySqlServerVersion(builder.Configuration.GetValue<string>("MySql:ServerVersion"))));
 
         // Add services to the container.
+        builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+        builder.Services.AddScoped<PdfService>();
         builder.Services.AddControllersWithViews();
         builder.Services.AddTransient<ICategoriaLivroRepository, CategoriaLivroRepositoryImpl>();
 

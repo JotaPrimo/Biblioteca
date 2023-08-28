@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Context;
 using Biblioteca.Models;
 using Biblioteca.Repositories.Interfaces;
+using Biblioteca.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,11 +10,13 @@ namespace Biblioteca.Controllers
     public class CategoriaLivroController : Controller
     {
         private readonly ICategoriaLivroRepository _categoriaLivroRepository;
-        
 
-        public CategoriaLivroController(ICategoriaLivroRepository categoriaLivroRepository)
+        private readonly PdfService _pdfService;
+
+        public CategoriaLivroController(ICategoriaLivroRepository categoriaLivroRepository, PdfService pdfService)
         {
             _categoriaLivroRepository = categoriaLivroRepository;
+            _pdfService = pdfService;
         }
 
         [HttpGet]
@@ -97,6 +100,14 @@ namespace Biblioteca.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult GeneratePdf()
+        {
+            string htmlContent = "<html><body><h1 style='color: blue;'>Styled PDF Example</h1><p>This is a styled PDF generated using DinkToPdf.</p></body></html>";
+
+            byte[] pdfBytes = _pdfService.GeneratePdf(htmlContent);
+
+            return File(pdfBytes, "application/pdf", "StyledPDF.pdf");
+        }
 
 
     }
