@@ -1,0 +1,43 @@
+﻿@model Biblioteca.Models.CategoriaLivro;
+
+<div class="row">
+    <div class="col-md-12 col-xl-12">
+        <form asp-action="Update" asp-route-id="@Model.Id" method="post">
+            <div class="form-group">
+                <button class="btn btn-sm btn-primary float-end">Salvar</button>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Nova Categoria</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Nome
+                                    <span class="text-red">*</span>
+                                </label>
+                                <input type="text" class="form-control" value="@Model.Nome" name="nome" placeholder="Nome" asp-for="Nome">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Descrição <span class="text-red">*</span>
+                                </label>
+                                <input type="text" class="form-control" name="Descricao" value="@Model.Descricao" asp-for="Descricao" placeholder="Descrição">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

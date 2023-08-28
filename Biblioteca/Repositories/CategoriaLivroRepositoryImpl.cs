@@ -34,11 +34,6 @@ namespace Biblioteca.Repositories
         }     
          
 
-        public void Update(int id, CategoriaLivroDTO categoriaLivroDTO)
-        {
-            var existingCategoria = _dbContext.CategoriaLivros.FirstOrDefault(c => c.Id == id);          
-        }
-
         public void Delete(int id)
         {
             var categoria = _dbContext.CategoriaLivros.FirstOrDefault(c => c.Id == id);
@@ -49,10 +44,23 @@ namespace Biblioteca.Repositories
             }
         }
 
-        public void Update(CategoriaLivro categoriaLivro)
+        public void Update(int idCategoriaLivro, CategoriaLivro categoriaLivro)
         {
-            throw new NotImplementedException();
+            var existingCategoria = _dbContext.CategoriaLivros.FirstOrDefault();
+
+            if (existingCategoria == null)
+            {
+                throw new Exception("Registro não encontrado");
+
+            }
+
+            existingCategoria.Descricao = categoriaLivro.Descricao;
+            existingCategoria.Nome = categoriaLivro.Nome;
+            _dbContext.SaveChanges();
+
+
         }
+
     }
 
 

@@ -52,6 +52,29 @@ namespace Biblioteca.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            CategoriaLivro categoria = _categoriaLivroRepository.FindById(id);
+            return View(categoria);
+        }
+
+        [HttpPost]
+        public IActionResult Update(int id, CategoriaLivro categoriaLivro)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            CategoriaLivro categoria = _categoriaLivroRepository.FindById(id);
+
+            _categoriaLivroRepository.Update(id, categoriaLivro);
+            TempData["success"] = "Categoria atualizada com sucesso";
+
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         public IActionResult Delete(int id)
         {           
