@@ -45,6 +45,7 @@ namespace Biblioteca.Repositories
             if (categoria != null)
             {
                 _dbContext.CategoriaLivros.Remove(categoria);
+                _dbContext.SaveChanges();
             }
         }
 
